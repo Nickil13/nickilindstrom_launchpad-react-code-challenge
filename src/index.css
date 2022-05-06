@@ -23,6 +23,7 @@
     --fs-body: 1rem;
 
     --border-radius: 0.25rem;
+    --box-shadow: 0px 2px 7px -5px rgba(0, 0, 0, 0.5);
 }
 
 h1,
@@ -49,7 +50,9 @@ body {
     font-family: var(--ff-secondary);
     font-size: var(--fs-body);
 }
-
+a {
+    text-decoration: none;
+}
 p {
     line-height: 1.6rem;
     color: var(--clr-base);
@@ -74,8 +77,15 @@ main {
     border: none;
     font-family: inherit;
     font-size: inherit;
+    cursor: pointer;
     border-radius: var(--border-radius);
     background-color: var(--clr-primary-light);
+    box-shadow: var(--box-shadow);
+}
+
+.btn:hover {
+    background-color: var(--clr-primary);
+    color: var(--clr-neutral);
 }
 
 /*Navigation*/
@@ -89,6 +99,11 @@ nav {
 .nav-links {
     display: flex;
     justify-content: end;
+}
+
+.active-nav {
+    font-weight: 700;
+    color: #023e8a;
 }
 
 .nav-links > li:not(:last-child) {
