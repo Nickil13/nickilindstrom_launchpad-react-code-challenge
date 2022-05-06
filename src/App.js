@@ -1,10 +1,18 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Navbar } from "./components";
+import { Home } from "./pages";
+
 function App() {
     return (
-        <div>
-            <nav></nav>
-            <main></main>
+        <Router>
+            <Navbar />
+            <main>
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                </Routes>
+            </main>
             <footer></footer>
-        </div>
+        </Router>
     );
 }
 
