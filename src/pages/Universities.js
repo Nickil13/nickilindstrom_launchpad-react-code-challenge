@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { listCountries } from "../actions/countriesActions";
 import { getUniversitiesByCountry } from "../actions/universitiesActions";
-import { Loading, Message } from "../components";
+import { Loading, Message, ScrollButton, UniversityCard } from "../components";
 
 export default function Universities() {
     const {
@@ -55,29 +55,30 @@ export default function Universities() {
                 <Loading />
             ) : universities.length > 0 ? (
                 <div className="universities">
-                    <h2>
+                    <h2 className="universities__title">
                         <span className="universities-num">
                             {universities.length}
-                        </span>{" "}
-                        Universities found in {selectedCountry}
+                        </span>
+                        {universities.length > 1
+                            ? " Universities "
+                            : " University "}
+                        found in {selectedCountry}
                     </h2>
-                    {universities.map((university, index) => {
-                        return (
-                            <div key={index} className="university-card">
-                                <h3 className="university-card__title">
-                                    {university.name}
-                                </h3>
-                                {university["state-province"] && (
-                                    <p>{university["state-province"]}</p>
-                                )}
-                                <p>{university.web_pages[0]}</p>
-                            </div>
-                        );
-                    })}
+                    <div className="university-cards">
+                        {universities.map((university, index) => {
+                            return (
+                                <UniversityCard
+                                    key={index}
+                                    university={university}
+                                />
+                            );
+                        })}
+                    </div>
                 </div>
             ) : (
-                <Message>No universities.</Message>
+                selectedCountry && <Message>No universities.</Message>
             )}
+            <ScrollButton />
         </div>
     );
 }

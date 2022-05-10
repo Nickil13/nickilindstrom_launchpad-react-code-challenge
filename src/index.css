@@ -13,6 +13,7 @@
 
     --clr-base: #3f4417;
     --clr-neutral: #ffffff;
+    --clr-neutral-dark: #e7e7e7;
     --clr-success: rgb(38, 177, 38);
     --clr-error: red;
 
@@ -22,6 +23,7 @@
     --fs-h1: 3rem;
     --fs-h2: 2.45rem;
     --fs-h3: 2rem;
+    --fs-body-lg: 1.5rem;
     --fs-body: 1rem;
 
     --border-radius: 0.25rem;
@@ -47,7 +49,9 @@ h2 {
 h3 {
     font-size: var(--fs-h3);
 }
-
+html {
+    scroll-behavior: smooth;
+}
 body {
     font-family: var(--ff-secondary);
     font-size: var(--fs-body);
@@ -250,6 +254,10 @@ label {
     color: var(--clr-error);
 }
 
+/*********************
+*** Universities ***
+********************/
+
 /* Countries select */
 #country-form {
     margin-top: 1rem;
@@ -258,16 +266,84 @@ label {
 .universities {
     padding: 3rem 0;
 }
+
+@media screen and (min-width: 1000px) {
+    .university-cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .university-card {
+        min-height: 250px;
+    }
+}
+.universities__title {
+    margin-bottom: 2rem;
+}
 .universities-num {
     display: inline-block;
     color: var(--clr-primary-light);
     background-color: var(--clr-primary-dark);
     padding: 1rem;
     border-radius: 50%;
+    min-width: 80px;
+    height: 80px;
+    text-align: center;
 }
 .university-card {
-    padding: 2rem 0;
+    padding: 2rem;
+    background-color: var(--clr-primary-dark);
+    margin: 0.5rem;
+    border-radius: 0.5rem;
 }
 .university-card__title {
-    margin-bottom: 0.5rem;
+    position: relative;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    color: var(--clr-neutral);
+}
+.university-card__title::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: var(--clr-primary-light);
+    width: 100%;
+    height: 3px;
+    border-radius: 1rem;
+}
+.university-card__province {
+    font-size: var(--fs-body-lg);
+    font-family: var(--ff-primary);
+}
+.university-card__site {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+}
+.university-card__site-icon {
+    font-size: var(--fs-body-lg);
+    margin-right: 1rem;
+}
+.university-card__body > p {
+    color: var(--clr-primary-light);
+}
+
+.scroll-btn {
+    position: fixed;
+    display: none;
+    right: 0;
+    bottom: 0;
+    font-size: var(--fs-h1);
+    cursor: pointer;
+    margin: 2rem;
+    color: var(--clr-neutral);
+    background-color: var(--clr-primary);
+    border-radius: 50%;
+    padding: 0.25rem;
+    z-index: 1;
+    transition: all 300ms ease-in-out;
+}
+.scroll-btn:hover {
+    transform: translateY(-10%);
+    background-color: var(--clr-primary-light);
 }
