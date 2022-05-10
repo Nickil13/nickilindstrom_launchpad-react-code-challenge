@@ -11,11 +11,21 @@ export default function UniversityCard({ university }) {
                         {university["state-province"]}
                     </p>
                 )}
-                <p className="university-card__site">
-                    {" "}
+                <div className="university-card__site">
                     <BsGlobe className="university-card__site-icon" />
-                    {university.web_pages[0]}
-                </p>
+                    {university.web_pages.map((site, index) => {
+                        return (
+                            <a
+                                key={index}
+                                href={site}
+                                target="_blank"
+                                rel="noreferrer"
+                            >
+                                {site}
+                            </a>
+                        );
+                    })}
+                </div>
             </div>
         </div>
     );
