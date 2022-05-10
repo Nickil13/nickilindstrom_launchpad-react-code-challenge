@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
     countries: [],
     loading: false,
+    error: "",
 };
 
 export const countriesSlice = createSlice({

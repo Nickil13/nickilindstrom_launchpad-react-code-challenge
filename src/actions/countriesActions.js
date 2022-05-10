@@ -4,16 +4,19 @@ import {
     countriesLoaded,
     countriesLoading,
 } from "../reducers/countriesSlice";
+import { sortAlphabetically } from "../utils/sortAlphabetically";
 
 export const listCountries = () => async (dispatch) => {
     try {
         dispatch(countriesLoading());
 
         const { data } = await axios.get(
-            "http://universities.hipolabs.com/search?country=Canada"
+            "https://countriesnow.space/api/v0.1/countries/info?returns=none"
         );
 
-        dispatch(countriesLoaded(data));
+        //Sort the country data alphabetically
+        let countries = data.data;
+        dispatch(countriesLoaded(sortAlphabetically(countries)));
     } catch (error) {
         let errorMessage = error.message;
         dispatch(countriesError(errorMessage));

@@ -63,7 +63,8 @@ ul {
     list-style: none;
 }
 input,
-textarea {
+textarea,
+select {
     font-family: inherit;
     font-size: inherit;
     width: 100%;
@@ -247,4 +248,26 @@ label {
 }
 .message.error {
     color: var(--clr-error);
+}
+
+/* Countries select */
+#country-form {
+    margin-top: 1rem;
+}
+
+.universities {
+    padding: 3rem 0;
+}
+.universities-num {
+    display: inline-block;
+    color: var(--clr-primary-light);
+    background-color: var(--clr-primary-dark);
+    padding: 1rem;
+    border-radius: 50%;
+}
+.university-card {
+    padding: 2rem 0;
+}
+.university-card__title {
+    margin-bottom: 0.5rem;
 }

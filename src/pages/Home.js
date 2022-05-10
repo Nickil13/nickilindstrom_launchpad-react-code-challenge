@@ -59,17 +59,7 @@ export default function Home() {
                     </button>
                 </div>
                 {message && <Message status="success">{message}</Message>}
-                {/* {addingPostSuccess && (
-                    <Message status="success"></Message>
-                )}
-                {deletePostSuccess && (
-                    <Message status="success">
-                        
-                    </Message>
-                )}
-                {editingPostSuccess && (
-                    <Message status="success"></Message>
-                )} */}
+
                 {loading ? (
                     <Loading />
                 ) : error ? (
