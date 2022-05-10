@@ -1,3 +1,4 @@
 import Home from "./Home";
+import Universities from "./Universities";
 
-export { Home };
+export { Home, Universities };
