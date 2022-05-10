@@ -13,6 +13,8 @@
 
     --clr-base: #3f4417;
     --clr-neutral: #ffffff;
+    --clr-success: rgb(38, 177, 38);
+    --clr-error: red;
 
     --ff-primary: "Raleway", sans-serif;
     --ff-secondary: "Roboto", sans-serif;
@@ -60,7 +62,16 @@ p {
 ul {
     list-style: none;
 }
-
+input,
+textarea {
+    font-family: inherit;
+    font-size: inherit;
+    width: 100%;
+    padding: 0.5rem;
+}
+textarea {
+    resize: none;
+}
 main {
     min-height: 100vh;
     padding: 4rem 0;
@@ -69,6 +80,7 @@ main {
 /*Utils*/
 .container {
     width: 80%;
+    /* max-width: 70rem; */
     margin: 0 auto;
 }
 
@@ -91,7 +103,7 @@ main {
 
 /*Navigation*/
 nav {
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
     max-width: 60rem;
     padding: 1rem;
@@ -118,7 +130,8 @@ nav {
 .post {
     position: relative;
     margin: 1rem 0;
-    padding: 3rem;
+    /* padding: 3rem; */
+    padding: 3rem 0;
     border-radius: 0.5rem;
 }
 
@@ -162,6 +175,7 @@ nav {
 }
 .modal-content__title {
     margin-bottom: 1rem;
+    text-align: center;
 }
 
 .modal__close-btn {
@@ -175,32 +189,62 @@ nav {
 .modal__close-btn:hover {
     color: var(--clr-base);
 }
+.modal__submit-btn {
+    margin-top: 1rem;
+}
 
 /* Inputs */
-input[type="text"] {
-    padding: 0.5rem;
-}
-textarea {
-    padding: 0.5rem;
-    resize: none;
+.input-control {
+    margin: 0.5rem 0;
+    width: 100%;
 }
 
-.input-control {
-    /* display: flex;
-    align-items: center;
-    flex-wrap: wrap; */
-    margin: 0.5rem 0;
-}
 label {
     font-weight: 500;
     display: block;
+    margin-bottom: 0.25rem;
 }
 
 #add-post-form {
-    /* display: grid;
-    place-items: center; */
-    /* display: flex;
+    display: flex;
     flex-direction: column;
     align-items: center;
-    justify-items: center; */
+    justify-items: center;
+    width: 80%;
+}
+
+/* Toolbar */
+.toolbar {
+}
+.searchbar {
+    margin-bottom: 1rem;
+}
+.searchbar form {
+    display: flex;
+    max-width: 250px;
+}
+.searchbar__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: var(--fs-h3);
+    color: var(--clr-neutral);
+    background-color: var(--clr-primary);
+    border-top-left-radius: var(--border-radius);
+    border-bottom-left-radius: var(--border-radius);
+    padding: 0.25rem 0.5rem;
+}
+
+/* Message */
+.message {
+    margin-top: 1rem;
+    font-size: var(--fs-h3);
+    font-family: var(--ff-primary);
+}
+
+.message.success {
+    color: var(--clr-success);
+}
+.message.error {
+    color: var(--clr-error);
 }
