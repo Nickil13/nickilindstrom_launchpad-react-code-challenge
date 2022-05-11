@@ -64,6 +64,7 @@ export default function Universities() {
                             : " University "}
                         found in {selectedCountry}
                     </h2>
+
                     <div className="university-cards">
                         {universities.map((university, index) => {
                             return (

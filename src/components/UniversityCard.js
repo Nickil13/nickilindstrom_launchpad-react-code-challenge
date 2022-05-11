@@ -13,7 +13,7 @@ export default function UniversityCard({ university }) {
                 )}
                 <div className="university-card__site">
                     <BsGlobe className="university-card__site-icon" />
-                    <div className="link-wrapper">
+                    <div className="university-card__site-links">
                         {university.web_pages.map((site, index) => {
                             return (
                                 <a
