@@ -4,7 +4,7 @@ import {
     countriesLoaded,
     countriesLoading,
 } from "../reducers/countriesSlice";
-import { sortAlphabetically } from "../utils/sortAlphabetically";
+import { sortAlphabetically } from "../utils/helperFunctions";
 
 export const listCountries = () => async (dispatch) => {
     try {

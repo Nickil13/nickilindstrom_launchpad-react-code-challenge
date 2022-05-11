@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Navbar } from "./components";
-import { Home, Universities } from "./pages";
+import { Home, PostalLookup, Universities } from "./pages";
 
 function App() {
     return (
@@ -10,6 +10,7 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/universities" element={<Universities />} />
+                    <Route path="/postal-lookup" element={<PostalLookup />} />
                 </Routes>
             </main>
             <footer></footer>

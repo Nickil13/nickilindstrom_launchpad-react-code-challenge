@@ -28,6 +28,7 @@
     --fs-body: 1rem;
 
     --border-radius: 0.25rem;
+    --border-radius-card: 0.5rem;
     --box-shadow: 0px 2px 7px -5px rgba(0, 0, 0, 0.5);
 }
 
@@ -295,7 +296,7 @@ label {
     padding: 2rem;
     background-color: var(--clr-primary-dark);
     margin: 0.5rem;
-    border-radius: 0.5rem;
+    border-radius: var(--border-radius-card);
 }
 .university-card__title {
     position: relative;
@@ -355,4 +356,27 @@ label {
 .scroll-btn:hover {
     transform: translateY(-10%);
     background-color: var(--clr-primary-light);
+}
+
+/*********************
+*** Postal Lookup ***
+********************/
+.zip-details {
+    display: inline-block;
+    background-color: var(--clr-primary-dark);
+    border-radius: var(--border-radius-card);
+    color: var(--clr-neutral);
+    padding: 2rem;
+    margin-top: 2rem;
+}
+
+.zip-details p {
+    color: var(--clr-neutral);
+}
+.zip-details__code {
+    /* font-weight: 500; */
+    /* color: var(--clr-primary-light); */
+}
+.place-loc {
+    color: var(--clr-primary-light);
 }

@@ -26,7 +26,16 @@ export default function Navbar() {
                             Universities
                         </NavLink>
                     </li>
-                    <li>Postal Lookup</li>
+                    <li>
+                        <NavLink
+                            to="/postal-lookup"
+                            className={({ isActive }) =>
+                                isActive ? "active-nav" : ""
+                            }
+                        >
+                            Postal Lookup
+                        </NavLink>
+                    </li>
                 </ul>
             </div>
         </nav>

@@ -6,6 +6,7 @@ import Post from "./Post";
 import ScrollButton from "./ScrollButton";
 import Searchbar from "./Searchbar";
 import UniversityCard from "./UniversityCard";
+import ZipCard from "./ZipCard";
 
 export {
     Loading,
@@ -16,4 +17,5 @@ export {
     ScrollButton,
     Searchbar,
     UniversityCard,
+    ZipCard,
 };
