@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Navbar } from "./components";
+import { Navbar, Footer } from "./components";
 import { Home, PostalLookup, Universities } from "./pages";
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
                     <Route path="/postal-lookup" element={<PostalLookup />} />
                 </Routes>
             </main>
-            <footer></footer>
+            <Footer />
         </Router>
     );
 }

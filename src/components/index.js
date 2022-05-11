@@ -1,4 +1,4 @@
-import Loading from "./Loading";
+import Footer from "./Footer";
 import Modal from "./Modal";
 import Message from "./Message";
 import Navbar from "./Navbar";
@@ -9,7 +9,7 @@ import UniversityCard from "./UniversityCard";
 import ZipCard from "./ZipCard";
 
 export {
-    Loading,
+    Footer,
     Modal,
     Message,
     Navbar,

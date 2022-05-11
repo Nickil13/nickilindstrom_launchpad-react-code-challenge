@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { getDetailsByZip } from "../actions/zipActions";
 import { useDispatch, useSelector } from "react-redux";
-import { Loading, Message, ZipCard } from "../components";
+import { Message, ZipCard } from "../components";
 
 export default function PostalLookup() {
     const [zipCode, setZipCode] = useState("");
@@ -36,7 +36,7 @@ export default function PostalLookup() {
             </form>
 
             {loading ? (
-                <Loading />
+                <Message>Loading...</Message>
             ) : error ? (
                 <Message>{error}</Message>
             ) : (

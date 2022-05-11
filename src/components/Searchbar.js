@@ -10,7 +10,7 @@ export default function Searchbar() {
 
     const handleSearch = (e) => {
         e.preventDefault();
-
+        setSearchValue("");
         if (searchValue === "") {
             dispatch(listPosts());
         } else {
@@ -24,11 +24,11 @@ export default function Searchbar() {
             <form onSubmit={handleSearch}>
                 <input
                     type="text"
-                    placeholder="Search for a post by id"
+                    placeholder="Search by id"
                     value={searchValue}
                     onChange={(e) => setSearchValue(e.target.value)}
                 />
-                <button className="btn searchbar__btn" type="submit">
+                <button className="searchbar__btn" type="submit">
                     <AiOutlineSearch />
                 </button>
             </form>

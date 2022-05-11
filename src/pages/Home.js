@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Loading, Message, Modal, Post, Searchbar } from "../components";
+import { Message, Modal, Post, ScrollButton, Searchbar } from "../components";
 import { useSelector, useDispatch } from "react-redux";
 import { listPosts, getPostById } from "../actions/postsActions";
 
@@ -52,7 +52,7 @@ export default function Home() {
                 <div className="toolbar">
                     <Searchbar />
                     <button
-                        className="btn"
+                        className="btn form-btn"
                         onClick={() => setIsModalShowing(true)}
                     >
                         Add a new post
@@ -61,7 +61,7 @@ export default function Home() {
                 {message && <Message status="success">{message}</Message>}
 
                 {loading ? (
-                    <Loading />
+                    <Message>Loading...</Message>
                 ) : error ? (
                     <Message>{error}</Message>
                 ) : (
@@ -77,6 +77,7 @@ export default function Home() {
                         })}
                     </div>
                 )}
+                <ScrollButton />
             </div>
             <Modal
                 isShowing={isModalShowing}

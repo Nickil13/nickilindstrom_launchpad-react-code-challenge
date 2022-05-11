@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { listCountries } from "../actions/countriesActions";
 import { getUniversitiesByCountry } from "../actions/universitiesActions";
-import { Loading, Message, ScrollButton, UniversityCard } from "../components";
+import { Message, ScrollButton, UniversityCard } from "../components";
 
 export default function Universities() {
     const {
@@ -18,7 +18,7 @@ export default function Universities() {
         if (!countries.length > 0) {
             dispatch(listCountries());
         }
-    }, []);
+    }, [countries, dispatch]);
 
     const handleSelectCountry = (e) => {
         e.preventDefault();
@@ -52,7 +52,7 @@ export default function Universities() {
                 </select>
             </form>
             {universitiesLoading ? (
-                <Loading />
+                <Message>Loading...</Message>
             ) : universities.length > 0 ? (
                 <div className="universities">
                     <h2 className="universities__title">
